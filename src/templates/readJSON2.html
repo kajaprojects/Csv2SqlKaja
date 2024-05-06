@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Beri JSON datoteko {% endblock %}</h1>
+
+<form method = "POST" enctype="multipart/form-data" action = "/readJSON">    
+    <div class="form-group">
+        <label for="Izberi JSON datoteko">Ime</label>
+        <input type="file" name="file" accept=".json">
+        <input type = "submit" value="Upload">  
+    </div>
+</form>
+<p style="color:green;"> File uploaded successfully!! </p>
+<form action="/show_json_data" target="_blank">
+    <input type="submit" value="Show JSON"/>
+</form>
+<form action="/write_json_data" target="_blank">
+    <input type="submit" value="Write JSON"/>
+</form>
+
+<hr>
+
+{% endblock %}
